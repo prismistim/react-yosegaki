@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 
 import * as action from './redux/actions'
 import PostYosegaki from './postYosegaki'
-import ListUp from './listUp'
+import YosegakiList from './yosegakiList'
 
 // Omajinai
 function mapStateToProps (state) {
@@ -18,15 +18,16 @@ function mapDispatchToProps (dispatch) {
   }
 }
 
-class App extends Component {
+class App extends React.Component {
+  constructor (props) { super(props) }
   render() {
     return (
       <div>
         <PostYosegaki {...this.props} />
-        <ListUp {...this.props} />
+        <YosegakiList {...this.props} />
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)
